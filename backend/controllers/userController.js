@@ -33,14 +33,13 @@ const updateUser = asyncHandler(async(req,res) => {
 });
 
 const deleteUser = asyncHandler(async(req, res) => {
-    const user1 = await UserToBeUsed.findById(req.params.id);
-    console.log('User', user1)
+    const user = await UserToBeUsed.findById(req.params.id);
 
-    if(!user1){
+    if(!user){
         res.status(400);
         throw new Error("User not found");
     }
-    await user1.remove();
+    await user.deleteOne();
 
     res.status(200).json({id: req.params.id});
 });
