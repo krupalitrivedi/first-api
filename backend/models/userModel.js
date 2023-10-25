@@ -6,13 +6,13 @@ id: {
 type: Number, required: true, unique: true
 },
 username: {
-type: String, required: true, unique: true
+type: String, unique: true
 },
 firstName: {
-type: String, required: true
+type: String
 },
 lastName: {
-type: String, required: true
+type: String
 },
 date: {
 type: Date, default: Date.now
